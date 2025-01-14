@@ -1,114 +1,185 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import Resume from '@/lib/resume.json'
+import clsx from 'clsx'
+import { useState } from 'react'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+function CVPage() {
+  const [isPrintMode] = useState(false)
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const countWords = (obj: any): number => {
+    if (!obj) {
+      return 0
+    } else if (typeof obj === 'string') {
+      return obj.split(' ').length
+    } else if (typeof obj === 'object') {
+      return Object.values(obj).reduce((acc: number, value) => {
+        return acc + countWords(value)
+      }, 0)
+    } else if (Array.isArray(obj)) {
+      return obj.reduce((acc, item) => {
+        return acc + countWords(item)
+      }, 0)
+    }
 
-export default function Home() {
+    return 0
+  }
+
+  console.log(`Word count: ${countWords(Resume)}`)
+
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+      style={{
+        backgroundColor: '#ffffff',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        maxWidth: '8.5in',
+      }}
     >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      <main className={clsx('space-y-6', !isPrintMode && 'p-8')}>
+        <section className="flex flex-col items-center">
+          <h1 className="font-bold text-xl font-serif mb-2">
+            {Resume.personal_details.name}
+          </h1>
+          <p>{Resume.personal_details.title}</p>
+          <div className="flex items-center space-x-2 text-gray-500">
+            <p>{Resume.personal_details.contact.email}</p>
+            <p>•</p>
+            <a href={`https://${Resume.personal_details.contact.linkedin}`}>
+              <p>{Resume.personal_details.contact.linkedin}</p>
+            </a>
+            <p>•</p>
+            <a href={`https://${Resume.personal_details.contact.github}`}>
+              <p>{Resume.personal_details.contact.github}</p>
+            </a>
+            <p>•</p>
+            <p>{Resume.personal_details.contact.country}</p>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">Summary</h2>
+          <hr />
+          <p className="text-justify">{Resume.summary}</p>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">Skills</h2>
+          <hr />
+          <div className="space-y-2">
+            {Resume.skills.map((skill) => (
+              <div className="flex flex-wrap space-x-1" key={skill.title}>
+                <h3 className="text-gray-500">{skill.title}:</h3>
+                {skill.items.map((item, idx) => (
+                  <div
+                    className="flex items-center space-x-1"
+                    key={`${skill}-${item}`}
+                  >
+                    <p>{item}</p>
+                    <p>{idx !== skill.items.length - 1 && '•'}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">Experience</h2>
+          <hr />
+          <div className="space-y-4">
+            {Resume.experience.map((exp) => (
+              <div
+                className="space-y-2"
+                style={{
+                  marginBottom: isPrintMode ? exp.margin : undefined,
+                }}
+                key={exp.company}
+              >
+                <div className="flex justify-between">
+                  <div>
+                    <p className="text-gray-500">{exp.company}</p>
+                    <h3 className="font-medium">{exp.title}</h3>
+                  </div>
+                  <div>
+                    <p className="text-gray-500">
+                      {exp.start_date} - {exp.end_date || 'Present'}
+                    </p>
+                  </div>
+                </div>
+                <div>{exp.summary && <p>{exp.summary}</p>}</div>
+                <ul className="space-y-2">
+                  {exp.highlights.map((highlight) => (
+                    <li className="flex space-x-2 text-justify" key={highlight}>
+                      <p>•</p>
+                      <p key={highlight}>{highlight}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">Personal Projects</h2>
+          <hr />
+          <div className="space-y-4">
+            {Resume.projects.map((proj) => (
+              <div className="space-y-1" key={proj.title}>
+                <h3 className="font-medium">{proj.title}</h3>
+                <p className="text-justify">{proj.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">Education</h2>
+          <hr />
+          {Resume.education.map((edu) => (
+            <div key={edu.institution}>
+              <p className="text-gray-500">{edu.institution}</p>
+              <h3 className="font-medium">{edu.degree}</h3>
+            </div>
+          ))}
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">
+            Courses and Certificates
+          </h2>
+          <hr />
+          {Resume.certifications.map((certs) => (
+            <div className="flex space-x-2" key={certs.title}>
+              <h3>{certs.title}</h3>
+              <p className="text-gray-500">{`— ${certs.institution}, ${certs.date}`}</p>
+            </div>
+          ))}
+        </section>
+
+        <section className="space-y-2">
+          <h2 className="text-lg font-serif text-center">
+            Interests and Hobbies
+          </h2>
+          <hr />
+          <div className="grid grid-cols-3 gap-2">
+            {Resume.interests.map((int) => (
+              <div key={int.title}>
+                <h3>{int.title}</h3>
+                <p className="text-gray-700 text-sm">{int.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
-  );
+  )
 }
+
+export async function getStaticProps() {
+  return {
+    props: {},
+  }
+}
+
+export default CVPage
