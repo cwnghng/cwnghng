@@ -1,0 +1,136 @@
+{
+  "personal_details": {
+    "name": "Chua Wang Heng",
+    "title": "Software Engineer | AI Practitioner",
+    "contact": {
+      "email": "cwnghng@outlook.com",
+      "linkedin": "linkedin.com/in/chuawangheng",
+      "github": "github.com/cwnghng",
+      "country": "Singapore"
+    }
+  },
+  "summary": "A Fullstack Engineer in the AI tech team at Crypto.com, I am involed in many projects. I am known for my fast learning abilities and strong teamwork skills. I also use the skills and technologies picked up in Crypto.com to introduce generative AI to my personal projects. For my personal growth, I am constantly learning new technologies and studying new subjects.",
+  "experience": [
+    {
+      "company": "Crypto.com",
+      "title": "Full Stack Engineer | AI Tech",
+      "start_date": "Oct 2023",
+      "end_date": null,
+      "summary": "Worked in a team of over 20 engineers focused on researching and developing AI products for both internal and external use. Maintained close working relationships with different departments to understand their needs and requirements.",
+      "highlights": [
+        "VAIB: accomplished a monthly 4.5% retention rate with 400k daily active chats by developing and maintaining the social media platform. The platform uses generative AI to allow users to create and share their own AI-generated content.",
+        "Ava Signals: developed the MVP for a market signal tool that has been deployed and integrated into the Crypto.com app, accessed by more than a million of users daily and increased daily trade volume by over 5%.",
+        "Chino: launched an internal marketing tool that assists the growth department in creating marketing campaigns and material. The tool has been used to create over 100 ads and has improved team efficiency.",
+        "AgentFun: developed the agent chatbot system for the AgentFun team to allow their users to create custom agents and interact with it on websites, telegram and discord. Over 300 agents have been created as of now."
+      ],
+      "margin": 150
+    },
+    {
+      "company": "The AceMeta Company",
+      "title": "Software Developer | Team Lead",
+      "start_date": "Mar 2022",
+      "end_date": "Oct 2023",
+      "summary": "Worked with and managed a team of 5 developers, primarily focused on full stack development.",
+      "highlights": [
+        "BlackScale: Launched 777 physically backed token t-shirts on the Ethereum network in collaboration with BlackScale by developing the market platform to trade the token and integrating the NFC chip interface.",
+        "DreamDomain: Developed our first NFT and metaverse product. Successfully ran a campaign showcasing the product to other Web3 natives and brands."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "National University of Singapore",
+      "degree": "Bachelor of Science (Physics)"
+    },
+    {
+      "institution": "Yishun Junior College",
+      "degree": "GCE A-Levels"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified AI Practitioner",
+      "institution": "AWS",
+      "date": "Dec 2024"
+    },
+    {
+      "title": "NGINX Fundamentals: High Performance Servers from Scratch",
+      "institution": "Udemy",
+      "date": "Jul 2022"
+    },
+    {
+      "title": "The Advanced Web Developer Bootcamp",
+      "institution": "Udemy",
+      "date": "Aug 2020"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Software Development",
+      "items": [
+        "NodeJS",
+        "TypeScript",
+        "Javascript",
+        "React",
+        "NextJS",
+        "NestJS",
+        "ThreeJS",
+        "Python",
+        "Flask",
+        "Gunicorn",
+        "Java",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "RESTful API",
+        "GraphQL"
+      ]
+    },
+    {
+      "title": "Devops & Cloud",
+      "items": ["Docker", "Kubernetes", "AWS", "GCP"]
+    },
+    {
+      "title": "AI",
+      "items": [
+        "ComfyUI",
+        "Automatic1111",
+        "Stable Diffusion",
+        "Prompt Engineering",
+        "RAG"
+      ]
+    },
+    {
+      "title": "Web3",
+      "items": ["Truffle", "Solidity", "Web3JS", "EthersJS"]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Forex & Crypto Signals Bot",
+      "description": "A bot that scans market chart for signals and immediately notify users through a telegram chat. The bot also checks the news for any major events that might affect the market and notify users of the event."
+    },
+    {
+      "title": "Butler.events",
+      "description": "A platform that connects event organisers with venues and vendors."
+    },
+    {
+      "title": "Kuis",
+      "description": "An experimental quiz platform that evaluates user personalities through odd quizzes."
+    }
+  ],
+  "interests": [
+    {
+      "title": "Algorithmic trading",
+      "description": "I spend time researching and developing my own chart theories, testing them through backtests."
+    },
+    {
+      "title": "Baking",
+      "description": "During the pandemic, I studied pastry and baking at SHATEC for 9 months. Now I bake occasionally for friends and family."
+    },
+    {
+      "title": "Gym and fitness",
+      "description": "Ensuring I am at the top of my physical and mental health. Recently started getting into Hyrox."
+    }
+  ]
+}
