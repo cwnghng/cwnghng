@@ -41,7 +41,7 @@ function CVPage() {
             {Resume.personal_details.name}
           </h1>
           <p>{Resume.personal_details.title}</p>
-          <div className="flex items-center space-x-2 text-gray-500">
+          <div className="flex flex-wrap justify-center items-center space-x-2 text-gray-500">
             <p>{Resume.personal_details.contact.email}</p>
             <p>•</p>
             <a href={`https://${Resume.personal_details.contact.linkedin}`}>
@@ -52,7 +52,9 @@ function CVPage() {
               <p>{Resume.personal_details.contact.github}</p>
             </a>
             <p>•</p>
-            <p>{Resume.personal_details.contact.country}</p>
+            <a href={`https://${Resume.personal_details.contact.medium}`}>
+              <p>{Resume.personal_details.contact.medium}</p>
+            </a>
           </div>
         </section>
 
@@ -87,36 +89,47 @@ function CVPage() {
           <h2 className="text-lg font-serif text-center">Experience</h2>
           <hr />
           <div className="space-y-4">
-            {Resume.experience.map((exp) => (
-              <div
-                className="space-y-2"
-                style={{
-                  marginBottom: isPrintMode ? exp.margin : undefined,
-                }}
-                key={exp.company}
-              >
-                <div className="flex justify-between">
-                  <div>
-                    <p className="text-gray-500">{exp.company}</p>
-                    <h3 className="font-medium">{exp.title}</h3>
+            {Resume.experience.map((exp) => {
+              if (exp.title === 'divider') {
+                return <hr className="mx-auto w-1/2" />
+              } else {
+                return (
+                  <div
+                    className="space-y-2"
+                    style={{
+                      marginBottom: isPrintMode ? exp.margin : undefined,
+                    }}
+                    key={exp.company}
+                  >
+                    <div className="flex justify-between">
+                      <div>
+                        <p className="text-gray-500">{exp.company}</p>
+                        <h3 className="font-medium">{exp.title}</h3>
+                      </div>
+                      <div>
+                        {exp.start_date && (
+                          <p className="text-gray-500">
+                            {exp.start_date} - {exp.end_date || 'Present'}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                    <div>{exp.summary && <p>{exp.summary}</p>}</div>
+                    <ul className="space-y-2">
+                      {exp.highlights?.map((highlight) => (
+                        <li
+                          className="flex space-x-2 text-justify"
+                          key={highlight}
+                        >
+                          <p>•</p>
+                          <p key={highlight}>{highlight}</p>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div>
-                    <p className="text-gray-500">
-                      {exp.start_date} - {exp.end_date || 'Present'}
-                    </p>
-                  </div>
-                </div>
-                <div>{exp.summary && <p>{exp.summary}</p>}</div>
-                <ul className="space-y-2">
-                  {exp.highlights.map((highlight) => (
-                    <li className="flex space-x-2 text-justify" key={highlight}>
-                      <p>•</p>
-                      <p key={highlight}>{highlight}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                )
+              }
+            })}
           </div>
         </section>
 

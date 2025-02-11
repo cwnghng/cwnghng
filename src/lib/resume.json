@@ -6,6 +6,7 @@
       "email": "cwnghng@outlook.com",
       "linkedin": "linkedin.com/in/chuawangheng",
       "github": "github.com/cwnghng",
+      "medium": "medium.com/@cwnghng",
       "country": "Singapore"
     }
   },
@@ -13,17 +14,26 @@
   "experience": [
     {
       "company": "Crypto.com",
-      "title": "Full Stack Engineer | AI Tech",
+      "title": "Senior Fullstack Engineer | AI Tech",
       "start_date": "Oct 2023",
       "end_date": null,
       "summary": "Worked in a team of over 20 engineers focused on researching and developing AI products for both internal and external use. Maintained close working relationships with different departments to understand their needs and requirements.",
       "highlights": [
-        "VAIB: accomplished a monthly 4.5% retention rate with 400k daily active chats by developing and maintaining the social media platform. The platform uses generative AI to allow users to create and share their own AI-generated content.",
-        "Ava Signals: developed the MVP for a market signal tool that has been deployed and integrated into the Crypto.com app, accessed by more than a million of users daily and increased daily trade volume by over 5%.",
-        "Chino: launched an internal marketing tool that assists the growth department in creating marketing campaigns and material. The tool has been used to create over 100 ads and has improved team efficiency.",
-        "AgentFun: developed the agent chatbot system for the AgentFun team to allow their users to create custom agents and interact with it on websites, telegram and discord. Over 300 agents have been created as of now."
+        "Social Media App: accomplished a monthly 4.5% retention rate with 400k daily active chats by developing and maintaining the social media platform of 500k users. The platform uses generative AI to allow users to create and share their own AI-generated content."
       ],
       "margin": 150
+    },
+    {
+      "title": "Fullstack Engineer | AI Tech",
+      "highlights": [
+        "AgentFun: developed the agent chatbot system for the AgentFun team to allow their users to create custom agents and interact with it on websites, telegram and discord. Over 300 agents have been created as of now.",
+        "Ava Signals: developed the MVP for a market signal tool that has been deployed and integrated into the Crypto.com app, accessed by more than a million of users daily and increased daily trade volume by over 5%.",
+        "Chino: launched an internal marketing tool that assists the growth department in creating marketing campaigns and material. The tool has been used to create over 100 ads and has improved team efficiency."
+      ],
+      "margin": 150
+    },
+    {
+      "title": "divider"
     },
     {
       "company": "The AceMeta Company",
@@ -34,6 +44,17 @@
       "highlights": [
         "BlackScale: Launched 777 physically backed token t-shirts on the Ethereum network in collaboration with BlackScale by developing the market platform to trade the token and integrating the NFC chip interface.",
         "DreamDomain: Developed our first NFT and metaverse product. Successfully ran a campaign showcasing the product to other Web3 natives and brands."
+      ]
+    },
+    {
+      "company": "DSO National Laboratories",
+      "title": "Lab Technician",
+      "start_date": "Sep 2020",
+      "end_date": "Mar 2022",
+      "summary": "A BSL-3 clinical diagnostics facility primary focused on processing Covid-19 samples. During my time as the lab technician, I am always working towards a healthy and jovial work relationship with my colleagues, lab managers and other ground staff to keep the mood up in the desolate period that is Covid-19.",
+      "highlights": [
+        "Responsible for the samples processing and analysis as well as stock management.",
+        "Conducted manual sample processing with consistent quality and minimal contamination."
       ]
     }
   ],
@@ -68,41 +89,24 @@
     {
       "title": "Software Development",
       "items": [
-        "NodeJS",
         "TypeScript",
-        "Javascript",
-        "React",
         "NextJS",
         "NestJS",
-        "ThreeJS",
         "Python",
-        "Flask",
-        "Gunicorn",
         "Java",
         "PostgreSQL",
         "MongoDB",
         "Redis",
-        "RESTful API",
         "GraphQL"
       ]
     },
     {
       "title": "Devops & Cloud",
-      "items": ["Docker", "Kubernetes", "AWS", "GCP"]
+      "items": ["Docker", "Kubernetes", "AWS"]
     },
     {
       "title": "AI",
-      "items": [
-        "ComfyUI",
-        "Automatic1111",
-        "Stable Diffusion",
-        "Prompt Engineering",
-        "RAG"
-      ]
-    },
-    {
-      "title": "Web3",
-      "items": ["Truffle", "Solidity", "Web3JS", "EthersJS"]
+      "items": ["ComfyUI", "Prompt Engineering"]
     }
   ],
   "projects": [
@@ -125,8 +129,8 @@
       "description": "I spend time researching and developing my own chart theories, testing them through backtests."
     },
     {
-      "title": "Baking",
-      "description": "During the pandemic, I studied pastry and baking at SHATEC for 9 months. Now I bake occasionally for friends and family."
+      "title": "Pottery",
+      "description": "During my free time, I spend my time at the pottery studio, creating my own pottery pieces."
     },
     {
       "title": "Gym and fitness",
