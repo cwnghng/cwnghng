@@ -89,9 +89,9 @@ function CVPage() {
           <h2 className="text-lg font-serif text-center">Experience</h2>
           <hr />
           <div className="space-y-4">
-            {Resume.experience.map((exp) => {
+            {Resume.experience.map((exp, index) => {
               if (exp.title === 'divider') {
-                return <hr className="mx-auto w-1/2" />
+                return <hr className="mx-auto w-1/2" key={`divider-${index}`} />
               } else {
                 return (
                   <div
