@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { useState } from 'react'
 
 function CVPage() {
-  const [isPrintMode] = useState(false)
+  const [isPrintMode] = useState(true)
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const countWords = (obj: any): number => {
@@ -51,10 +51,10 @@ function CVPage() {
             <a href={`https://${Resume.personal_details.contact.github}`}>
               <p>{Resume.personal_details.contact.github}</p>
             </a>
-            <p>•</p>
+            {/* <p>•</p>
             <a href={`https://${Resume.personal_details.contact.medium}`}>
               <p>{Resume.personal_details.contact.medium}</p>
-            </a>
+            </a> */}
           </div>
         </section>
 
@@ -150,7 +150,12 @@ function CVPage() {
           <h2 className="text-lg font-serif text-center">Education</h2>
           <hr />
           {Resume.education.map((edu) => (
-            <div key={edu.institution}>
+            <div
+              style={{
+                marginBottom: isPrintMode ? edu.margin : undefined,
+              }}
+              key={edu.institution}
+            >
               <p className="text-gray-500">{edu.institution}</p>
               <h3 className="font-medium">{edu.degree}</h3>
             </div>

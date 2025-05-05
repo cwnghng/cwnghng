@@ -10,7 +10,7 @@
       "country": "Singapore"
     }
   },
-  "summary": "A Fullstack Engineer in the AI tech team at Crypto.com, I am involed in many projects. I am known for my fast learning abilities and strong teamwork skills. I also use the skills and technologies picked up in Crypto.com to introduce generative AI to my personal projects. For my personal growth, I am constantly learning new technologies and studying new subjects.",
+  "summary": "A Fullstack Engineer in the AI tech team at Crypto.com, I am involved in many projects. I am known for my fast learning abilities and strong teamwork skills. I also use the skills and technologies picked up in Crypto.com to introduce generative AI to my personal projects. For my personal growth, I am constantly learning new technologies and studying new subjects.",
   "experience": [
     {
       "company": "Crypto.com",
@@ -19,21 +19,17 @@
       "end_date": null,
       "summary": "Worked in a team of over 20 engineers focused on researching and developing AI products for both internal and external use. Maintained close working relationships with different departments to understand their needs and requirements.",
       "highlights": [
-        "Social Media App: accomplished a monthly 4.5% retention rate with 400k daily active chats by developing and maintaining the social media platform of 500k users. The platform uses generative AI to allow users to create and share their own AI-generated content."
-      ],
-      "margin": 150
+        "Social Media/Chat App: accomplished a monthly 4.5% retention rate with 400k daily active chats. Developed the large microservices architecture that heavily utilises Redis and PostgreSQL. Services includes statistics, AI generations, payments, chat and gamification engines."
+      ]
     },
     {
       "title": "Fullstack Engineer | AI Tech",
       "highlights": [
-        "AgentFun: developed the agent chatbot system for the AgentFun team to allow their users to create custom agents and interact with it on websites, telegram and discord. Over 300 agents have been created as of now.",
-        "Ava Signals: developed the MVP for a market signal tool that has been deployed and integrated into the Crypto.com app, accessed by more than a million of users daily and increased daily trade volume by over 5%.",
-        "Chino: launched an internal marketing tool that assists the growth department in creating marketing campaigns and material. The tool has been used to create over 100 ads and has improved team efficiency."
+        "AgentFun: developed the agent chatbot system for the AgentFun team to allow their users to create custom agents and interact with it on websites, telegram and discord. Over 300 agents have been created.",
+        "Ava Signals: developed the MVP for a market signal tool that has been integrated into the Crypto.com app, accessed by more than a million of users daily. MVP relies on native webview to a React app for UI and a Python backend to handle the signal generation.",
+        "Chino: launched an internal AI marketing tool that has been used to create over 200 ads. Uses a set of image generation workflows deployed on AWS Sagemaker, with Python Flask and MongoDB on the backend. Tool also includes automation to generate standardised ad formats."
       ],
       "margin": 150
-    },
-    {
-      "title": "divider"
     },
     {
       "company": "The AceMeta Company",
@@ -65,7 +61,8 @@
     },
     {
       "institution": "Yishun Junior College",
-      "degree": "GCE A-Levels"
+      "degree": "GCE A-Levels",
+      "margin": 150
     }
   ],
   "certifications": [
@@ -115,12 +112,12 @@
       "description": "A bot that scans market chart for signals and immediately notify users through a telegram chat. The bot also checks the news for any major events that might affect the market and notify users of the event."
     },
     {
-      "title": "Butler.events",
-      "description": "A platform that connects event organisers with venues and vendors."
+      "title": "WeAreHere.Click",
+      "description": "An interactive global web experience. The platform visualizes user participation from around the world based on their clicks on the website in real time with websockets. Stats will be accumulated and displayed for users."
     },
     {
-      "title": "Kuis",
-      "description": "An experimental quiz platform that evaluates user personalities through odd quizzes."
+      "title": "CustomChat.club",
+      "description": "A different take on personalised chatbots like Character.AI or JanitorAI. The platform has a unique chatbot thought-flow editor that allows users to better control their bot behaviours."
     }
   ],
   "interests": [
